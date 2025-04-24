@@ -1,25 +1,26 @@
+
 "use client";
  
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
- 
+
 import Nav2 from "@/components/Nav2";
 import Footer from "@/components/Footer";
  
 const Catalogo= () => {
- 
- 
+
+
   return (
     <>
  
-     
+      
         <Nav2/>
-   
+    
         <div className="bg-[#ffeccf]">
             <div className="flex flex-row">
- 
+
               <nav className="col-2 mt-8 px-4 flex flex-col"
-                     
+                      
                       style={{backgroundColor:'#FFCCBC'}}>
                               <h1 id="h1filtro">Filtro</h1>
                           <div id="Filtro">
@@ -36,11 +37,11 @@ const Catalogo= () => {
                                   <input className="form-check-input" type="checkbox"/>
                                   <label className="form-check-label">Outros</label>
                               </div>
-                         
+                          
                           </div>
                           <div id="Filtro">
                                   <h2 id="h2filtro">Porte</h2>
-                         
+                          
                               <div>
                                   <input className="form-check-input" type="checkbox"/>
                                   <label className="form-check-label" >P</label>
@@ -56,7 +57,7 @@ const Catalogo= () => {
                           </div>
                           <div id="Filtro">
                                   <h2 id="h2filtro">Cidade</h2>
-                         
+                          
                               <div>
                                   <input className="form-check-input" type="checkbox" />
                                   <label className="form-check-label">Sorocaba</label>
@@ -72,7 +73,9 @@ const Catalogo= () => {
                           </div>
                               <input className="border-2 rounded-full bg-[#ff8110] w-20 mt-2" type="button" value="Filtrar"/>
                       </nav>
-                 
+
+
+                      
                 <div className="col-10 mt-8" >
                     <div className="px-4 " >
                         <div className="flex flex-row bg-[#E1BEE7] mb-4">
@@ -92,7 +95,7 @@ const Catalogo= () => {
                                 <p>Comportamento:</p>
                             </div>
                         </div>
- 
+
                         <div className="flex flex-row bg-[#E1BEE7] mb-4">
                           <Image className="py-5 px-2" src="/images/cachorroteste.jfif" alt=""
                           width={400}
@@ -110,7 +113,7 @@ const Catalogo= () => {
                                 <p>Comportamento:</p>
                             </div>
                         </div>
- 
+
                         <div className="flex flex-row bg-[#E1BEE7] mb-4">
                           <Image className="py-5 px-2" src="/images/cachorroteste.jfif" alt=""
                           width={400}
@@ -128,7 +131,7 @@ const Catalogo= () => {
                                 <p>Comportamento:</p>
                             </div>
                         </div>
- 
+
                         <div className="flex flex-row bg-[#E1BEE7] mb-4">
                           <Image className="py-5 px-2" src="/images/cachorroteste.jfif" alt=""
                           width={400}
@@ -146,16 +149,23 @@ const Catalogo= () => {
                                 <p>Comportamento:</p>
                             </div>
                         </div>
-                       
+                        
                     </div>
                 </div>
                 </div>
             </div>
-           
+            
+
+        
+        
+
         <Footer/>
-     
+      
+ 
+    
     </>
   );
 };
  
 export default Catalogo;
+ 

@@ -22,7 +22,7 @@ const QuemSomos = () => {
                 id="fotoalunos1"
                 src="/images/daniel.png"
                 alt="Daniel José Bernardes Filho"
-                width={100}
+                width={150}
                 height={100}
               />
               <p className="mt-2 text-center">Daniel José Bernardes Filho</p>
@@ -33,7 +33,7 @@ const QuemSomos = () => {
                 id="fotoalunos2"
                 src="/images/luan.png"
                 alt="Luan Silva de Picoli"
-                width={100}
+                width={150}
                 height={100}
               />
               <p className="mt-2 text-center">Luan Silva de Picoli</p>
@@ -47,7 +47,7 @@ const QuemSomos = () => {
                 id="fotoalunos3"
                 src="/images/lucas.png"
                 alt="Lucas Pires de Almeida"
-                width={100}
+                width={150}
                 height={100}
               />
               <p className="mt-2 text-center">Lucas Pires de Almeida</p>
@@ -58,7 +58,7 @@ const QuemSomos = () => {
                 id="fotoalunos4"
                 src="/images/gussi.png"
                 alt="Miguel dos Santos Gussi"
-                width={100}
+                width={150}
                 height={100}
               />
               <p className="mt-2 text-center">Miguel dos Santos Gussi</p>
@@ -72,7 +72,7 @@ const QuemSomos = () => {
                 id="fotoalunos5"
                 src="/images/pa.png"
                 alt="Pedro Arthur de Oliveira"
-                width={100}
+                width={150}
                 height={100}
               />
               <p className="mt-2 text-center">Pedro Arthur de Oliveira</p>

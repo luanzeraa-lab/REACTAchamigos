@@ -68,7 +68,7 @@ const Header = () => {
                 </div>
 
 
-                        <div className="  hidden fixed top-9 right-0 z-50 md:flex items-center rounded-full justify-center w-auto sm:w-auto lg:order-3"
+                        <div className="  hidden fixed top-11 right-0 z-50 md:flex items-center rounded-full justify-center w-auto sm:w-auto lg:order-3"
                          >
 
 
