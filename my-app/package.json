@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/maven-pro": "^5.2.7",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
     "express": "^5.1.0",

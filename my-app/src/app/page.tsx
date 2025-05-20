@@ -19,10 +19,10 @@ import '../components/App.css'
       
       
 
-      <Header/>
+      {/* <Header/> */}
       <Navbarr/>
       <Main/>
-      <Navbarr2/>
+      {/* <Navbarr2/> */}
       <Footer/>
     </div>
       

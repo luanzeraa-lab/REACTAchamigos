@@ -1,2 +1,13 @@
 @import "tailwindcss";
 
+:root {
+
+    --font-family-maven: "Maven Pro", sans-serif;
+
+    --font-footer: 400 16px/140% var(--font-family-maven);
+
+
+      
+
+}
+

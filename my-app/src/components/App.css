@@ -1,11 +1,25 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
     background-color: #FFECCF;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
+
+   
 }
 
+
+  .carousel-control-prev-icon {
+    background-color: #ff5733; /* Cor laranja para a seta anterior */
+  }
+
+  .carousel-control-next-icon {
+    background-color: #3490dc; /* Cor azul para a seta seguinte */
+  }
 
 
         /*------------------------------------------------------cabeçalho----------------------------------------------------------------*
@@ -23,4 +37,333 @@ div#bottomcarroussel{
 
 
 
+
+
+
+  /*Classes utilitarias para textos*/
+
+  .font-footer {
+    font: var(--font-footer);
+    color: #2b2b2b;
+
+    
+  }
+
+
+
+
+.contatoss {
+
+.redes {
+    
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+background-color: #f4b183;
+width: 350px;
+height: 40px;
+border-radius: 50px;
+margin-block: 10px;
+         
+
+  &:hover {
+
+    border: solid 2px #d94f00;
+  }
+
+
+figure {
+     
   
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+
+}
+
+}
+
+}
+
+
+/* CSS PAGE QUEM SOMOS */
+
+  
+.containerrrfluid {
+  display: grid;
+
+  grid-template-areas: 
+  "nav nav nav"
+  "img1 img1 img1"
+  "img2 img2 img2"
+  "info info info"
+  "footer footer footer";
+
+
+  grid-template-columns: repeat(3, 1fr);
+ 
+
+  margin: 0;
+  padding: 0;
+ 
+     .informacoes {
+    grid-area: info;
+    margin-inline: 30px;
+   
+     h2 {
+      text-align: center;
+      margin-block: 10px;
+      text-transform: uppercase;
+      
+      
+     }
+
+     li {
+      padding-bottom: 20px;
+     }
+   
+    
+}
+
+  .nave {
+grid-area: nav;
+
+  }
+
+  .footerrr {
+  
+grid-area: footer;
+
+  }
+
+  
+.wrapper {
+  margin-block: 40px;
+  grid-area: 2 / 1 / 4 / 4; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+ background-color: 	#f5deb3;
+ margin-inline: 30px;
+
+   h1 {
+     text-align: center;
+     text-transform: uppercase;
+     padding-block: 20px;
+   }
+   
+
+     
+    .adms1 {
+      margin-top: 30px;
+      grid-area: img1;
+      display: flex;
+      flex-direction: row;
+       justify-content: space-around;
+    
+      
+    }
+
+      
+    .adms2 {
+      grid-area: img2;
+       display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     margin-bottom: 30px;
+     margin-top: 0;
+     align-items: center;
+  
+     
+    }
+
+    .carde2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+ .carde1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+   }
+
+ 
+}
+
+
+/* CSS PAGE CATALOGO */
+
+.gridcate {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+display: grid;
+grid-template-areas: 
+"nav nav " 
+"apre apre"
+"aside cata"
+"aside cata"
+"aside cata"
+"aside cata"
+"footer footer";
+
+grid-template-columns: 2fr 8fr;
+
+ grid-template-rows: auto auto repeat(4, 1fr) auto;
+  gap: 10px;
+ 
+
+
+.Navc {
+  grid-area: nav;
+
+}
+
+.apresentacao {
+  grid-area: apre;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+  color: #2F5D3F;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+   margin-top: 50px;
+  }
+
+  h5 {
+    font-size: 20px;
+   text-align: center;
+    color: #2F5D3F;
+    padding-top: 5px;
+    padding-bottom: 40px;
+  }
+}
+
+.asfiltro {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px black;
+  margin-bottom: 14px;
+  
+  gap: 50px;
+  background-color: #FFCCBC;
+  margin-inline: 20px;
+  border-radius: 50px;
+
+  h2 {
+    align-self: center;
+    margin-top: 10px;
+    text-transform: uppercase ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:#4B3B2A;
+
+  }
+  
+  ul {
+    padding: 8px;
+    
+  
+    li {
+       padding-block: 10px;
+
+       label {
+        padding-inline: 10px;
+         font-family: Georgia, 'Times New Roman', Times, serif;
+    color:#4B3B2A;
+
+       }
+    }
+   
+  }
+
+  
+  .animais {
+    display: flex;
+    flex-direction: column;
+
+  }
+}
+
+.porte {
+    display: flex;
+    flex-direction: column;
+}
+
+.cidade {
+     display: flex;
+    flex-direction: column;
+}
+
+.idadepesq {
+     display: flex;
+    flex-direction: column;
+
+    .botao {
+      border: solid 1px black;
+      border-radius: 20px;
+      color: white;
+      background-color: #2F5D3F;
+      width: 100px;
+      height: 35px;
+      margin-left: 10px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin-bottom: 125px;
+    }
+}
+
+.descricaoani {
+grid-area: cata;
+margin-right: 40px;
+display: flex;
+flex-direction: column;
+gap: 15px;
+
+
+
+.figures {
+display: flex;
+  border: 1px solid #9C27B0;
+
+background-color: #E1BEE7;
+
+ border-radius: 12px;
+  
+ figcaption {
+  margin-block: 12px;
+   p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #4B3B2A;
+    font-size: 20px;
+     margin-block: 7px;
+
+   }
+
+ }
+
+
+}
+
+
+}
+
+.footercat {
+  grid-area: footer;
+}
+
+
+
+
+
+}
+

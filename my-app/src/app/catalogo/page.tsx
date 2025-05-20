@@ -1,171 +1,175 @@
 
 "use client";
- 
+
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
 
 import Nav2 from "@/components/Nav2";
 import Footer from "@/components/Footer";
- 
-const Catalogo= () => {
+
+const Catalogo = () => {
 
 
-  return (
-    <>
- 
-      
-        <Nav2/>
-    
-        <div className="bg-[#ffeccf]">
-            <div className="flex flex-row">
+    return (
+        <>
 
-              <nav className="col-2 mt-8 px-4 flex flex-col"
-                      
-                      style={{backgroundColor:'#FFCCBC'}}>
-                              <h1 id="h1filtro">Filtro</h1>
-                          <div id="Filtro">
-                              <h2 id="h2filtro">Animais</h2>
-                              <div>
-                                  <input className="form-check-input" type="checkbox"/>
-                                  <label className="form-check-label">Gato</label>
-                              </div>
-                              <div>
-                                  <input className="form-check-input" type="checkbox"/>
-                                  <label className="form-check-label" >Cachorro</label>
-                              </div>
-                              <div>
-                                  <input className="form-check-input" type="checkbox"/>
-                                  <label className="form-check-label">Outros</label>
-                              </div>
-                          
-                          </div>
-                          <div id="Filtro">
-                                  <h2 id="h2filtro">Porte</h2>
-                          
-                              <div>
-                                  <input className="form-check-input" type="checkbox"/>
-                                  <label className="form-check-label" >P</label>
-                              </div>
-                              <div>
-                                  <input className="form-check-input" type="checkbox" />
-                                  <label className="form-check-label" >M</label>
-                              </div>
-                              <div>
-                                  <input className="form-check-input" type="checkbox"/>
-                                  <label className="form-check-label">G</label>
-                              </div>
-                          </div>
-                          <div id="Filtro">
-                                  <h2 id="h2filtro">Cidade</h2>
-                          
-                              <div>
-                                  <input className="form-check-input" type="checkbox" />
-                                  <label className="form-check-label">Sorocaba</label>
-                              </div>
-                              <div>
-                                  <input className="form-check-input" type="checkbox" />
-                                  <label className="form-check-label" >Votorantim</label>
-                              </div>
-                              <div>
-                                  <input className="form-check-input" type="checkbox" />
-                                  <label className="form-check-label" >Outras</label>
-                              </div>
-                          </div>
-                              <input className="border-2 rounded-full bg-[#ff8110] w-20 mt-2" type="button" value="Filtrar"/>
-                      </nav>
+            <Container fluid className="gridcate">
+                <div className="Navc"><Nav2 /> </div>
 
+                <div className="apresentacao">
+                    <h1 className="text-4xl text-[#2F5D3F]">Encontre o seu novo <br /> melhor amigo!</h1>
+                    <h5>Esses são os amigos que estão esperando por um <br /> lar cheio de amor e carinho &hearts;</h5>
+                </div>
 
-                      
-                <div className="col-10 mt-8" >
-                    <div className="px-4 " >
-                        <div className="flex flex-row bg-[#E1BEE7] mb-4">
-                          <Image className="py-5 px-2" src="/images/cachorroteste.jfif" alt=""
-                          width={400}
-                          height={200}/>
-                            <div id="paragrafocatalogo" >
-                                <p>Nome:</p>
-                                <p> Espécie: Cachorro</p>
-                                <p>Raça: </p>
-                                <p>Idade: </p>
-                                <p>Sexo: </p>
-                                <p>Temperamento: </p>
-                                <p>Tamanho: </p>
-                                <p>Vacinas: </p>
-                                <p>Desparasitação: </p>
-                                <p>Comportamento:</p>
-                            </div>
-                        </div>
+                <div className="asfiltro">
+                    <h2>Filtro</h2>
+                    <div className="animais">
+                          <h2>Animais</h2>
+                        <ul>
+                        <li><input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label">Gato</label></li>
 
-                        <div className="flex flex-row bg-[#E1BEE7] mb-4">
-                          <Image className="py-5 px-2" src="/images/cachorroteste.jfif" alt=""
-                          width={400}
-                          height={200}/>
-                            <div id="paragrafocatalogo" >
-                                <p>Nome:</p>
-                                <p> Espécie: Cachorro</p>
-                                <p>Raça: </p>
-                                <p>Idade: </p>
-                                <p>Sexo: </p>
-                                <p>Temperamento: </p>
-                                <p>Tamanho: </p>
-                                <p>Vacinas: </p>
-                                <p>Desparasitação: </p>
-                                <p>Comportamento:</p>
-                            </div>
-                        </div>
+                        <li><input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label" >Cachorro</label></li>
 
-                        <div className="flex flex-row bg-[#E1BEE7] mb-4">
-                          <Image className="py-5 px-2" src="/images/cachorroteste.jfif" alt=""
-                          width={400}
-                          height={200}/>
-                            <div id="paragrafocatalogo" >
-                                <p>Nome:</p>
-                                <p> Espécie: Cachorro</p>
-                                <p>Raça: </p>
-                                <p>Idade: </p>
-                                <p>Sexo: </p>
-                                <p>Temperamento: </p>
-                                <p>Tamanho: </p>
-                                <p>Vacinas: </p>
-                                <p>Desparasitação: </p>
-                                <p>Comportamento:</p>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-row bg-[#E1BEE7] mb-4">
-                          <Image className="py-5 px-2" src="/images/cachorroteste.jfif" alt=""
-                          width={400}
-                          height={200}/>
-                            <div id="paragrafocatalogo" >
-                                <p>Nome:</p>
-                                <p> Espécie: Cachorro</p>
-                                <p>Raça: </p>
-                                <p>Idade: </p>
-                                <p>Sexo: </p>
-                                <p>Temperamento: </p>
-                                <p>Tamanho: </p>
-                                <p>Vacinas: </p>
-                                <p>Desparasitação: </p>
-                                <p>Comportamento:</p>
-                            </div>
-                        </div>
-                        
+                       <li> <input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label">Outros</label></li>
+                          </ul>
                     </div>
-                </div>
-                </div>
-            </div>
-            
 
-        
-        
+                    <div className="porte">
+                        <h2>Porte</h2>
+                        <ul>
+                        <li><input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label">P</label></li>
 
-        <Footer/>
-      
- 
-    
-    </>
-  );
+                        <li><input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label" >M</label></li>
+
+                       <li> <input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label">G</label></li>
+                          </ul>
+                    </div>
+                
+                    <div className="cidade">
+                        <h2>Cidade</h2>
+                       <ul>
+                        <li><input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label">Sorocaba</label></li>
+
+                        <li><input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label" >Votorantim</label></li>
+
+                       <li> <input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label">Outras</label></li>
+                          </ul>
+
+                    </div>
+              
+                    <div className="idadepesq">
+                          <h2>Idade</h2>
+                      <ul>
+                        <li><input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label">0-10 anos</label></li>
+
+                        <li><input className="form-check-input" type="checkbox" />
+                        <label className="form-check-label" >10 anos+</label></li>
+                        </ul>
+
+                    <input className="botao" type="button" value="Filtrar"/>
+
+                    <Image  
+                                    className='my-5 border rounded-2xl'
+                                    src="/images/abandono-de-animais---crime-federal-dyp64t3hrm.webp" 
+                                    alt="Crime-related image"
+                                     width={350} height={500} />
+                 </div>
+                </div>
+
+                <div className="descricaoani">
+                   
+                    <figure className="figures">
+                        <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
+                          width={400}
+                          height={200}/>
+                        <figcaption>
+                             <p>Nome:</p>
+                                <p> Espécie: Cachorro</p>
+                                <p>Raça: </p>
+                                <p>Idade: </p>
+                                <p>Sexo: </p>
+                                <p>Temperamento: </p>
+                                <p>Tamanho: </p>
+                                <p>Vacinas: </p>
+                                <p>Desparasitação: </p>
+                                <p>Comportamento:</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure className="figures">
+                        <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
+                          width={400}
+                          height={200}/>
+                        <figcaption>
+                             <p>Nome:</p>
+                                <p> Espécie: Cachorro</p>
+                                <p>Raça: </p>
+                                <p>Idade: </p>
+                                <p>Sexo: </p>
+                                <p>Temperamento: </p>
+                                <p>Tamanho: </p>
+                                <p>Vacinas: </p>
+                                <p>Desparasitação: </p>
+                                <p>Comportamento:</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure className="figures">
+                        <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
+                          width={400}
+                          height={200}/>
+                        <figcaption>
+                             <p>Nome:</p>
+                                <p> Espécie: Cachorro</p>
+                                <p>Raça: </p>
+                                <p>Idade: </p>
+                                <p>Sexo: </p>
+                                <p>Temperamento: </p>
+                                <p>Tamanho: </p>
+                                <p>Vacinas: </p>
+                                <p>Desparasitação: </p>
+                                <p>Comportamento:</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure className="figures">
+                        <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
+                          width={400}
+                          height={200}/>
+                        <figcaption>
+                             <p>Nome:</p>
+                                <p> Espécie: Cachorro</p>
+                                <p>Raça: </p>
+                                <p>Idade: </p>
+                                <p>Sexo: </p>
+                                <p>Temperamento: </p>
+                                <p>Tamanho: </p>
+                                <p>Vacinas: </p>
+                                <p>Desparasitação: </p>
+                                <p>Comportamento:</p>
+                        </figcaption>
+                    </figure>
+               
+                </div>
+
+                <div className="footercat"> <Footer /> </div>
+            </Container>
+
+
+
+        </>
+    );
 };
- 
+
 export default Catalogo;
- 
