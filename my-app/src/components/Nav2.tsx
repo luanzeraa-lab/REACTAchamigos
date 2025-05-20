@@ -10,7 +10,7 @@ const Nav2 =()=>{
 
     return(
         <>
-            <Navbar expand="lg" className="bg-light border-1 border-black rounded">
+            <Navbar expand="lg" className="bg-light border-1 border-black">
           <Navbar.Brand>
             <Image
               id="logo"
