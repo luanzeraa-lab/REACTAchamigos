@@ -1,8 +1,11 @@
+import { useRouter } from "next/navigation";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 
 const Cadastrar =()=>{
+    const router = useRouter();
     return (
+        
         <div className='mt-4 d-flex justify-center'>
                 <div className="text-center col-4">
                     <Form.Label htmlFor="login">Email ou CPF</Form.Label>
@@ -17,6 +20,12 @@ const Cadastrar =()=>{
                         aria-describedby="passwordHelpBlock"
                     />
                     <input className="border-2 rounded-full bg-[#ff8110] w-20 m-2" type="button" value="Cadastrar"/>
+                    <h2>Cadastro de animais</h2>
+                      <a className=" text-center text-decoration-none text-black hover:scale-150 py-2"
+                    style={{cursor:'pointer'}} 
+                    onClick={()=>{
+                        router.push("/CadastroAnimais")
+                    }}>Cadastro Animais</a>
 
                 </div>
                 

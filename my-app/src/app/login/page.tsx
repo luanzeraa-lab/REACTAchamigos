@@ -6,26 +6,28 @@ import Nav2 from "@/components/Nav2";
 import Footer from "@/components/Footer";
 
 
-const Login =()=>{
 
-    return(
-        <div className='bg-[#ffeccf]'>
-            <Nav2/>
-            
-            <Logar/>
-        
-                <div className="mt-4 justify-items-center">
-                    <p id="ou">OU</p>
-                    <p className="mt-2 font-bold">Cadastre-Se</p>
-                </div>
-                
-            <Cadastrar/>
-            <Footer/>
-            
-    
 
-    
-        </div>
-    )
+const Login = () => {
+  return (
+    <>
+      <div className="min-h-screen flex flex-col bg-[#ffeccf]">
+        <Nav2 />
+
+        <main className="flex-1 flex flex-col">
+          <Logar />
+
+          <div className="mt-4 text-center">
+            <p id="ou">OU</p>
+            <p className="mt-2 font-bold">Cadastre-Se</p>
+          </div>
+
+          <Cadastrar />
+        </main>
+
+        <Footer />
+      </div>
+    </>
+  );
 };
 export default Login;

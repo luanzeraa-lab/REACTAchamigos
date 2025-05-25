@@ -1,10 +1,9 @@
 
-"use client";
 
 import Image from "next/image";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
 
+import styles from './Catalogo.module.css';
+import { Container } from "react-bootstrap";
 import Nav2 from "@/components/Nav2";
 import Footer from "@/components/Footer";
 
@@ -14,17 +13,17 @@ const Catalogo = () => {
     return (
         <>
 
-            <Container fluid className="gridcate">
-                <div className="Navc"><Nav2 /> </div>
+            <Container fluid className={styles['gridcate']}>
+                <div className= {styles['Navc']}><Nav2 /> </div>
 
-                <div className="apresentacao">
+                <div className= {styles['apresentacao']}>
                     <h1 className="text-4xl text-[#2F5D3F]">Encontre o seu novo <br /> melhor amigo!</h1>
                     <h5>Esses são os amigos que estão esperando por um <br /> lar cheio de amor e carinho &hearts;</h5>
                 </div>
 
-                <div className="asfiltro">
+                <div className= {styles['asfiltro']}>
                     <h2>Filtro</h2>
-                    <div className="animais">
+                    <div className= {styles['animais']}>
                           <h2>Animais</h2>
                         <ul>
                         <li><input className="form-check-input" type="checkbox" />
@@ -38,7 +37,7 @@ const Catalogo = () => {
                           </ul>
                     </div>
 
-                    <div className="porte">
+                    <div className= {styles['porte']}>
                         <h2>Porte</h2>
                         <ul>
                         <li><input className="form-check-input" type="checkbox" />
@@ -52,7 +51,7 @@ const Catalogo = () => {
                           </ul>
                     </div>
                 
-                    <div className="cidade">
+                    <div className= {styles['cidade']}>
                         <h2>Cidade</h2>
                        <ul>
                         <li><input className="form-check-input" type="checkbox" />
@@ -67,7 +66,7 @@ const Catalogo = () => {
 
                     </div>
               
-                    <div className="idadepesq">
+                    <div className= {styles['idadepesq']}>
                           <h2>Idade</h2>
                       <ul>
                         <li><input className="form-check-input" type="checkbox" />
@@ -87,9 +86,9 @@ const Catalogo = () => {
                  </div>
                 </div>
 
-                <div className="descricaoani">
+                <div className= {styles['descricaoani']}>
                    
-                    <figure className="figures">
+                    <figure className= {styles['figures']}>
                         <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
                           width={400}
                           height={200}/>
@@ -107,7 +106,7 @@ const Catalogo = () => {
                         </figcaption>
                     </figure>
 
-                    <figure className="figures">
+                    <figure className= {styles['figures']}>
                         <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
                           width={400}
                           height={200}/>
@@ -125,7 +124,7 @@ const Catalogo = () => {
                         </figcaption>
                     </figure>
 
-                    <figure className="figures">
+                    <figure className= {styles['figures']}>
                         <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
                           width={400}
                           height={200}/>
@@ -143,7 +142,7 @@ const Catalogo = () => {
                         </figcaption>
                     </figure>
 
-                    <figure className="figures">
+                    <figure className= {styles['figures']}>
                         <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
                           width={400}
                           height={200}/>
@@ -163,7 +162,7 @@ const Catalogo = () => {
                
                 </div>
 
-                <div className="footercat"> <Footer /> </div>
+                <div className= {styles['footercat']}> <Footer /> </div>
             </Container>
 
 

@@ -3,7 +3,8 @@
 
 import Image from "next/image";
 import { Container } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+
+import styles from '../quemsomos/quemsomos.module.css'
 import Nav2 from "@/components/Nav2";
 import Footer from "@/components/Footer";
 
@@ -12,13 +13,13 @@ const QuemSomos = () => {
   return (
     <>
        
-      <Container fluid className="bg-[#ffeccf] containerrrfluid ">
-        <div className="nave"> <Nav2 /> </div>
-        <div className="wrapper">
+      <Container fluid className= {styles['containerrrfluid']}>
+        <div className= {styles['nave']}> <Nav2 /> </div>
+        <div className= {styles['wrapper']}>
           <h1>Administradores do Site</h1>
-        <div className="adms1">
+        <div className= {styles['adms1']}>
           
-          <div className="carde1">
+          <div className= {styles['carde1']}>
             <Image
               className="w-55 h-55 rounded-full object-cove"
               id="fotoalunos1"
@@ -29,7 +30,7 @@ const QuemSomos = () => {
             />
             <strong className="mt-2 text-center">Daniel José Bernardes Filho</strong>
           </div>
-          <div className="carde1">
+          <div className= {styles['carde1']}>
             <Image
               className="w-55 h-55 rounded-full object-cove"
               id="fotoalunos2"
@@ -40,7 +41,7 @@ const QuemSomos = () => {
             />
             <strong className="mt-2 text-center">Luan Silva de Picoli</strong>
           </div>
-          <div className="carde1">
+          <div className= {styles['carde1']}>
             <Image
               className="w-55 h-55 rounded-full object-cove"
               id="fotoalunos3"
@@ -52,8 +53,8 @@ const QuemSomos = () => {
             <strong className="mt-2 text-center">Lucas Pires de Almeida</strong>
           </div>
         </div>
-        <div className="adms2">
-          <div className="carde2">
+        <div className= {styles['adms2']}>
+          <div className= {styles['carde2']}>
             <Image
               className="w-58 h-55 rounded-full object-cove"
               id="fotoalunos4"
@@ -65,7 +66,7 @@ const QuemSomos = () => {
             <strong className="mt-2 text-center">Miguel dos Santos Gussi</strong>
           </div>
 
-          <div className="carde2">
+          <div className= {styles['carde2']}>
             <Image
               className=""
               id="logo"
@@ -77,7 +78,7 @@ const QuemSomos = () => {
             
           </div>
 
-          <div className="carde2">
+          <div className= {styles['carde2']}>
             <Image
               className="w-57 h-55 rounded-full object-cove"
               id="fotoalunos5"
@@ -93,7 +94,7 @@ const QuemSomos = () => {
         </div>
         </div>
 
-        <div className="  bg-[#fbe2bd]  informacoes">
+        <div className= {styles['informacoes']}>
 
           <h2>Principais objetivos do site</h2>
           <ul className="list none">
@@ -130,7 +131,7 @@ const QuemSomos = () => {
 
         </div>
 
-        <div className="footerrr"><Footer /></div>
+        <div className={styles['footerrr']}> <Footer/></div>
 
       </Container>
 

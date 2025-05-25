@@ -17,7 +17,7 @@ const Footer =()=> {
                 <div className="contatoss">
                     <div className="redes">
                     <figure>
-                        <Image src="/images/whatsapp-logo-bold-svgrepo-com.svg"
+                        <Image src="/icons/instagram-logo-facebook-2-svgrepo-com.svg"
                 alt="icone Whatsapp"  width={600}
                 height={600}
                 style={{
@@ -31,7 +31,7 @@ const Footer =()=> {
                         </figure> 
 
                             <figure>
-                        <Image src="/images/instagram-logo-facebook-2-svgrepo-com.svg"
+                        <Image src="/icons/instagram-logo-facebook-2-svgrepo-com.svg"
                 alt="icone instagram"  width={600}
                 height={600}
                 style={{
@@ -45,7 +45,7 @@ const Footer =()=> {
                         </figure> 
 
                             <figure>
-                        <Image src="/images/phone-svgrepo-com.svg"
+                        <Image src="/icons/phone-svgrepo-com.svg"
                 alt="icone insta"  width={600}
                 height={600}
                 style={{
