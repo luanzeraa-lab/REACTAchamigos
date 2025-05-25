@@ -21,9 +21,9 @@ const Carrossel = () => {
           <div className="carousel-item active">
             <div className='d-flex justify-content-center'>
               <Image
-                src="/images/gatinho.jpg"
-                alt="Imagem do gatinho"
-                width={400}
+                src="/images/feira_adocao.png"
+                alt="Imagem de uma feira de adoção de animais"
+                width={1200}
                 height={600}
                 style={{
                   objectFit: 'cover', 
@@ -37,9 +37,9 @@ const Carrossel = () => {
           <div className="carousel-item">
             <div className='d-flex justify-content-center'>
               <Image 
-                src="/images/cachorroteste.jfif"
-                alt="Imagem do cachorro"
-                width={400}
+                src="/images/vacinacao.png"
+                alt="Imagem de uma campanha de vacinação de animais"
+                width={1200}
                 height={600}
                 style={{
                   objectFit: 'cover', 
@@ -53,9 +53,9 @@ const Carrossel = () => {
           <div className="carousel-item">
             <div className='d-flex justify-content-center'>
               <Image 
-                src="/images/test.png"
-                alt="Imagem de teste"
-                width={400}
+                src="/images/conscientizacao.png"
+                alt="Imagem de um evento de conscientização"
+                width={1200}
                 height={600}
                 style={{
                   objectFit: 'cover', 

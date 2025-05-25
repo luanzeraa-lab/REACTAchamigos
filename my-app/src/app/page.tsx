@@ -5,7 +5,6 @@ import Navbarr from '@/components/Navbarr';
 import Navbarr2 from '@/components/Navbarr2';
 import Main from '../components/Main'
 import Footer from '../components/Footer'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/App.css'
 
 
@@ -19,7 +18,7 @@ import '../components/App.css'
       
       
 
-      {/* <Header/> */}
+      <Header/>
       <Navbarr/>
       <Main/>
       {/* <Navbarr2/> */}
