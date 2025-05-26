@@ -5,8 +5,8 @@
 import {  Button } from 'react-bootstrap';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState} from 'react';
+
 
 
 const Header = () => {
@@ -22,7 +22,7 @@ const Header = () => {
         setClicado(false);
     }
 
-    const [msg, setMsg] = useState<string>();
+    
     const [visivel, setVisivel] = useState(false);
 
     const visibilidade =()=>{
@@ -30,16 +30,7 @@ const Header = () => {
     }
    
 
-    useEffect(()=>{
-    const getHello = async() => {
-        const response = await axios.get ("http://localhost");
-
-        setMsg(response.data);
-        
-    };
-    getHello();
-    }, []);
-
+    
 
     return (
         
@@ -57,14 +48,6 @@ const Header = () => {
                         </a>
 
                         
-                        <div className="w-80 flex-grow flex justify-center">
-                            <h1
-                            className={`${visivel ? 'flex' : 'hidden'}`}
-                            
-                            >
-                            {msg}
-                            </h1>
-                        </div>
                 </div>
 
 

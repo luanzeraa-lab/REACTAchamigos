@@ -1,4 +1,4 @@
-
+"use client"
 
 import Image from "next/image";
 
@@ -6,9 +6,23 @@ import styles from './Catalogo.module.css';
 import { Container } from "react-bootstrap";
 import Nav2 from "@/components/Nav2";
 import Footer from "@/components/Footer";
+import axios from "axios"
+import { IAnimal } from "../testApi/IAnimal";
+import { useEffect, useState } from "react"
 
 const Catalogo = () => {
 
+  const [animal, setAnimal] = useState<IAnimal[]>([]);
+
+  useEffect(()=>{
+        const listaAnimal = async ()=>{
+            const response = await axios.get("http://localhost/animais");
+
+            setAnimal(response.data);
+            console.log(response.data);
+        };
+        listaAnimal();
+    }, []);
 
     return (
         <>
@@ -106,62 +120,24 @@ const Catalogo = () => {
                         </figcaption>
                     </figure>
 
-                    <figure className= {styles['figures']}>
-                        <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
-                          width={400}
-                          height={200}/>
-                        <figcaption>
-                             <p>Nome:</p>
-                                <p> Espécie: Cachorro</p>
-                                <p>Raça: </p>
-                                <p>Idade: </p>
-                                <p>Sexo: </p>
-                                <p>Temperamento: </p>
-                                <p>Tamanho: </p>
-                                <p>Vacinas: </p>
-                                <p>Desparasitação: </p>
-                                <p>Comportamento:</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure className= {styles['figures']}>
-                        <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
-                          width={400}
-                          height={200}/>
-                        <figcaption>
-                             <p>Nome:</p>
-                                <p> Espécie: Cachorro</p>
-                                <p>Raça: </p>
-                                <p>Idade: </p>
-                                <p>Sexo: </p>
-                                <p>Temperamento: </p>
-                                <p>Tamanho: </p>
-                                <p>Vacinas: </p>
-                                <p>Desparasitação: </p>
-                                <p>Comportamento:</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure className= {styles['figures']}>
-                        <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
-                          width={400}
-                          height={200}/>
-                        <figcaption>
-                             <p>Nome:</p>
-                                <p> Espécie: Cachorro</p>
-                                <p>Raça: </p>
-                                <p>Idade: </p>
-                                <p>Sexo: </p>
-                                <p>Temperamento: </p>
-                                <p>Tamanho: </p>
-                                <p>Vacinas: </p>
-                                <p>Desparasitação: </p>
-                                <p>Comportamento:</p>
-                        </figcaption>
-                    </figure>
-               
+                    
+                    {animal.map(ani=>{
+                return(
+                    <div key={ani.id}>
+                        <p>{`Nome: ${ani.nome}`}</p>
+                        <p>{`Idade: ${ani.idade}`}</p>
+                        <p>{`Raça: ${ani.raca}`}</p>
+                        <p>{`Sexo: ${ani.sexo}`}</p>
+                        <p>{`Porte: ${ani.porte}`}</p>
+                        <p>{`Peso: ${ani.peso}`}</p>
+                        <p>{`Observações: ${ani.observacoes}`}</p>
+                        <p >{`Animal castrado?: ${ani.castracao}`}</p>
+                        src={`http://localhost/public/${ani.imagem}`}
+                    </div>
+                )
+            })}
                 </div>
-
+            
                 <div className= {styles['footercat']}> <Footer /> </div>
             </Container>
 

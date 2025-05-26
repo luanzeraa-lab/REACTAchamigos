@@ -3,10 +3,17 @@
 import axios from "axios"
 import { useState } from "react";
 
-const createAnimal = (nome: string, raca: string | undefined, imagem: File | null) =>{
+const createAnimal = (nome: string, idade: number, raca: string, sexo: string, porte: string,
+   peso: number, observacoes: string | null, castracao: boolean, imagem: File | null) =>{
     axios.post("http://localhost/animais", {
         nome: nome,
+        idade: idade,
         raca: raca,
+        sexo: sexo,
+        porte: porte,
+        peso: peso,
+        observacoes: observacoes,
+        castracao:castracao,
         imagem: imagem,
     })
     .then((res) => {

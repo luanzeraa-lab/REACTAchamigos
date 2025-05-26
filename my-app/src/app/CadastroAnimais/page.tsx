@@ -3,9 +3,46 @@ import styles from './CadastroAnimais.module.css';
 import { useRouter } from "next/navigation";
 import { Container, Image, Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
+import axios from "axios"
+import { useState } from "react";
+
+const createAnimal = (nome: string, idade: number, raca: string, sexo: string, porte: string ,
+   peso: number , observacoes: string , castracao: boolean , imagem: File | undefined) =>{
+    axios.post("http://localhost/animais", {
+        nome: nome,
+        idade: idade,
+        raca: raca,
+        sexo: sexo,
+        porte: porte,
+        peso: peso,
+        observacoes: observacoes,
+        castracao:castracao,
+        imagem,
+    })
+    .then((res) => {
+      console.log(JSON.stringify(res.data));
+      if (res.status === 201) {
+        alert("Animal cadastrado com sucesso!");
+      } else {
+        alert("Falha ao tentar cadastrar o animal");
+      }
+    })
+    .catch(() => {
+      alert("Falha ao tentar cadastrar o animal");
+    });
+};
 
 const CadastroAnimais = () => {
     const router = useRouter();
+    const [nomeAnimal, setNomeAnimal] = useState<string>("");
+    const [idadeAnimal, setIdadeAnimal] = useState<number>(0);
+    const [racaAnimal, setRacaAnimal] = useState<string>("");
+    const [sexoAnimal, setSexoAnimal] = useState<string>("");
+    const [porteAnimal, setPorteAnimal] = useState<string >("");
+    const [pesoAnimal, setPesoAnimal] = useState<number >(0);
+    const [obsAnimal, setObsAnimal] = useState<string >("");
+    const [castrado, setCastrado]= useState<boolean >(false);
+    const [imgAnimal, setImgAnimal] = useState<File | undefined>(undefined);
 
     return (
         <>
@@ -35,23 +72,39 @@ const CadastroAnimais = () => {
 
                                 <div className={styles['input-wrapper']}>
                                     <Form.Label htmlFor="name">Nome</Form.Label>
-                                    <Form.Control id="name" type="text" placeholder="Insira o nome" />
+                                    <Form.Control id="name" type="text" placeholder="Insira o nome"
+                                    value={nomeAnimal}
+                                    onChange={(event)=>
+                                        setNomeAnimal(event.target.value)
+                                    } />
                                 </div>
 
 
                                 <div className={styles['input-wrapper']}>
                                     <Form.Label htmlFor="age">Idade</Form.Label>
-                                    <Form.Control id="age" type="number" placeholder="Insira a idade" />
+                                    <Form.Control id="age" type="number" placeholder="Insira a idade" 
+                                    value={idadeAnimal}
+                                    onChange={(event)=>
+                                        setIdadeAnimal(Number(event.target.value))
+                                    }/>
                                 </div>
 
                                 <div className={styles['input-wrapper']}>
                                     <Form.Label htmlFor="race">Raça</Form.Label>
-                                    <Form.Control id="race" type="text" placeholder="Insira a raça" />
+                                    <Form.Control id="race" type="text" placeholder="Insira a raça" 
+                                    value={racaAnimal}
+                                    onChange={(event)=>
+                                        setRacaAnimal(event.target.value)
+                                    }/>
                                 </div>
 
                                 <div className={styles['select-wrapper']}>
                                     <Form.Label htmlFor='gender'>Sexo</Form.Label>
-                                    <Form.Select id='gender'>
+                                    <Form.Select id='gender'
+                                    value={sexoAnimal}
+                                    onChange={(event)=>
+                                        setSexoAnimal(event.target.value)
+                                    }>
                                         <option value="">Selecione...</option>
                                         <option value="macho">Macho</option>
                                         <option value="femea">Fêmea</option>
@@ -60,7 +113,11 @@ const CadastroAnimais = () => {
 
                                 <div className={styles['select-wrapper']}>
                                     <Form.Label htmlFor='size'>Porte</Form.Label>
-                                    <Form.Select id='size'>
+                                    <Form.Select id='size'
+                                    value={porteAnimal}
+                                    onChange={(event)=>
+                                        setPorteAnimal(event.target.value)
+                                    }>
                                         <option value="">Selecione...</option>
                                         <option value="pequeno">Pequeno</option>
                                         <option value="medio">Médio</option>
@@ -70,7 +127,11 @@ const CadastroAnimais = () => {
 
                                 <div className={styles['input-wrapper']}>
                                     <Form.Label htmlFor='weight'>Peso (kg)</Form.Label>
-                                    <Form.Control id='weight' type="number" step="0.1" placeholder="Peso em kg" />
+                                    <Form.Control id='weight' type="number" step="0.1" placeholder="Peso em kg"
+                                    value={pesoAnimal}
+                                    onChange={(event)=>
+                                        setPesoAnimal(Number(event.target.value))
+                                    } />
                                 </div>
 
                             </div>
@@ -117,6 +178,10 @@ const CadastroAnimais = () => {
                                         as="textarea"
                                         rows={5}
                                         placeholder="Escreva informações adicionais sobre o animal, possui outras vacinas? possui alergias? É Vermifugado? Possui doenças pré-existentes?"
+                                        value={obsAnimal}
+                                        onChange={(event)=>{
+                                            setObsAnimal(event.target.value)
+                                        }}
                                     />
 
                                     <Form.Label className='mt-3 mb-0.5'>✂️ Castração</Form.Label>
@@ -127,6 +192,10 @@ const CadastroAnimais = () => {
                                         name="castracao"
                                         value="sim"
                                         label="Sim"
+                                        checked={castrado === true}
+                                        onChange={()=>
+                                            setCastrado(true)
+                                        }
                                     />
 
                                     <Form.Check
@@ -135,6 +204,10 @@ const CadastroAnimais = () => {
                                         name="castracao"
                                         value="nao"
                                         label="Não"
+                                        checked={castrado === false}
+                                        onChange={()=>
+                                            setCastrado(false)
+                                        }
                                     />
 
                                 </div>
@@ -146,9 +219,13 @@ const CadastroAnimais = () => {
                                     
                                     <Form.Control className={styles['inputcontrol']}
                                         type="file"
-                                        id="foto-animal"
-                                        name="fotoAnimal"
+                                        id="imagem"
+                                        name="imagem"
                                         accept="image/*"
+                                        onChange={(event)=>{
+                                             const file = (event.target as HTMLInputElement).files?.[0];
+                                            setImgAnimal(file);
+                                        }}
                                     />
                                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -168,7 +245,10 @@ const CadastroAnimais = () => {
                         <div className={styles['action-wrapper']}>
 
                         <Button className={styles['btn-secondary']} type="button">Salvar respostas</Button>
-                        <Button className={styles['btn-primary']} type="submit">Finalizar cadastro</Button>
+                        <Button className={styles['btn-primary']} type="submit"
+                        onClick={()=>{
+                            createAnimal(nomeAnimal, idadeAnimal, racaAnimal, sexoAnimal, porteAnimal, pesoAnimal, obsAnimal, castrado, imgAnimal)
+                        }}>Finalizar cadastro</Button>
 
                      </div>
 
