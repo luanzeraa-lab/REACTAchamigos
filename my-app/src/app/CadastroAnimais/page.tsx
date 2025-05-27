@@ -17,7 +17,7 @@ const createAnimal = (nome: string, idade: number, raca: string, sexo: string, p
         peso: peso,
         observacoes: observacoes,
         castracao:castracao,
-        imagem,
+        imagem: File,
     })
     .then((res) => {
       console.log(JSON.stringify(res.data));
@@ -34,6 +34,7 @@ const createAnimal = (nome: string, idade: number, raca: string, sexo: string, p
 
 const CadastroAnimais = () => {
     const router = useRouter();
+
     const [nomeAnimal, setNomeAnimal] = useState<string>("");
     const [idadeAnimal, setIdadeAnimal] = useState<number>(0);
     const [racaAnimal, setRacaAnimal] = useState<string>("");

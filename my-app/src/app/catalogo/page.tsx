@@ -102,40 +102,26 @@ const Catalogo = () => {
 
                 <div className= {styles['descricaoani']}>
                    
-                    <figure className= {styles['figures']}>
-                        <Image className="py-3 px-3 rounded-[2vw]" src="/images/dog-.jpg" alt=""
-                          width={400}
-                          height={200}/>
-                        <figcaption>
-                             <p>Nome:</p>
-                                <p> Espécie: Cachorro</p>
-                                <p>Raça: </p>
-                                <p>Idade: </p>
-                                <p>Sexo: </p>
-                                <p>Temperamento: </p>
-                                <p>Tamanho: </p>
-                                <p>Vacinas: </p>
-                                <p>Desparasitação: </p>
-                                <p>Comportamento:</p>
-                        </figcaption>
-                    </figure>
-
-                    
                     {animal.map(ani=>{
                 return(
-                    <div key={ani.id}>
-                        <p>{`Nome: ${ani.nome}`}</p>
-                        <p>{`Idade: ${ani.idade}`}</p>
-                        <p>{`Raça: ${ani.raca}`}</p>
-                        <p>{`Sexo: ${ani.sexo}`}</p>
-                        <p>{`Porte: ${ani.porte}`}</p>
-                        <p>{`Peso: ${ani.peso}`}</p>
-                        <p>{`Observações: ${ani.observacoes}`}</p>
-                        <p >{`Animal castrado?: ${ani.castracao}`}</p>
-                        src={`http://localhost/public/${ani.imagem}`}
-                    </div>
+                    <figure className= {styles['figures']}
+                     key={ani.id}>
+                        <img src={`http://localhost/public/${ani.imagem}`} alt="imagem"
+                        />
+                        <figcaption>
+                            <p>{`Nome: ${ani.nome}`}</p>
+                            <p>{`Idade: ${ani.idade}`}</p>
+                            <p>{`Raça: ${ani.raca}`}</p>
+                            <p>{`Sexo: ${ani.sexo}`}</p>
+                            <p>{`Porte: ${ani.porte}`}</p>
+                            <p>{`Peso: ${ani.peso}`}</p>
+                            <p>{`Observações: ${ani.observacoes}`}</p>
+                            <p >{`Animal castrado?: ${ani.castracao}`}</p>
+                        </figcaption>
+                    </figure>
                 )
-            })}
+                })}
+
                 </div>
             
                 <div className= {styles['footercat']}> <Footer /> </div>
