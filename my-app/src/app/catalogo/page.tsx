@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 import Nav2 from "@/components/Nav2";
 import Footer from "@/components/Footer";
 import axios from "axios"
-import { IAnimal } from "../testApi/IAnimal";
+import { IAnimal } from "./IAnimal";
 import { useEffect, useState } from "react"
 
 const Catalogo = () => {
@@ -35,7 +35,7 @@ const Catalogo = () => {
                     <h5>Esses são os amigos que estão esperando por um <br /> lar cheio de amor e carinho &hearts;</h5>
                 </div>
 
-                <div className= {styles['asfiltro']}>
+                <div className={styles['asfiltro']}>
                     <h2>Filtro</h2>
                     <div className= {styles['animais']}>
                           <h2>Animais</h2>
@@ -90,7 +90,7 @@ const Catalogo = () => {
                         <label className="form-check-label" >10 anos+</label></li>
                         </ul>
 
-                    <input className="botao" type="button" value="Filtrar"/>
+                    <input className="border-2 rounded-full bg-[#ff8110] w-20 m-2" type="button" value="Filtrar"/>
 
                     <Image  
                                     className='my-5 border rounded-2xl'
@@ -102,25 +102,26 @@ const Catalogo = () => {
 
                 <div className= {styles['descricaoani']}>
                    
-                    {animal.map(ani=>{
-                return(
-                    <figure className= {styles['figures']}
-                     key={ani.id}>
-                        <img src={`http://localhost/public/${ani.imagem}`} alt="imagem"
-                        />
-                        <figcaption>
-                            <p>{`Nome: ${ani.nome}`}</p>
-                            <p>{`Idade: ${ani.idade}`}</p>
-                            <p>{`Raça: ${ani.raca}`}</p>
-                            <p>{`Sexo: ${ani.sexo}`}</p>
-                            <p>{`Porte: ${ani.porte}`}</p>
-                            <p>{`Peso: ${ani.peso}`}</p>
-                            <p>{`Observações: ${ani.observacoes}`}</p>
-                            <p >{`Animal castrado?: ${ani.castracao}`}</p>
-                        </figcaption>
-                    </figure>
-                )
-                })}
+                        {animal.map(ani=>{
+                    return(
+                        <figure className= {styles['figures']}
+                        key={ani.id}>
+
+                            <img className="w-50 h-auto" src={`http://localhost/public/${ani.imagem}`} alt="imagem"
+                            />
+                            <figcaption>
+                                <p><span className="font-bold">Nome:</span> {ani.nome}</p>
+                                <p><span className="font-bold">Idade:</span> {ani.idade}</p>
+                                <p><span className="font-bold">Raça:</span> {ani.raca}</p>
+                                <p><span className="font-bold">Sexo:</span> {ani.sexo}</p>
+                                <p><span className="font-bold">Porte:</span> {ani.porte}</p>
+                                <p><span className="font-bold">Peso:</span> {ani.peso}</p>
+                                <p><span className="font-bold">Animal castrado?:</span> {ani.castracao ? "Sim" : "Não"}</p>
+                                <p><span className="font-bold">Observações:</span> {ani.observacoes}</p>
+                            </figcaption>
+                        </figure>
+                    )
+                    })}
 
                 </div>
             

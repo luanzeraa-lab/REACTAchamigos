@@ -19,7 +19,7 @@ const Login = () => {
 
           <div className="mt-4 text-center">
             <p id="ou">OU</p>
-            <p className="mt-2 font-bold">Cadastre-Se</p>
+            <p className="mt-2 font-bold text-2xl">Cadastre-Se</p>
           </div>
 
           <Cadastrar />

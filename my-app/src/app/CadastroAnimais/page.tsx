@@ -6,19 +6,28 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios"
 import { useState } from "react";
 
-const createAnimal = (nome: string, idade: number, raca: string, sexo: string, porte: string ,
-   peso: number , observacoes: string , castracao: boolean , imagem: File | undefined) =>{
-    axios.post("http://localhost/animais", {
-        nome: nome,
-        idade: idade,
-        raca: raca,
-        sexo: sexo,
-        porte: porte,
-        peso: peso,
-        observacoes: observacoes,
-        castracao:castracao,
-        imagem: File,
+const createAnimal = (nome: string, idade: number, raca: string, sexo: string, porte: string,
+     peso: number, observacoes: string, castracao: boolean, imagem: File | undefined
+) => {
+    const formData = new FormData();
+    formData.append("nome", nome);
+    formData.append("idade", idade.toString());
+    formData.append("raca", raca);
+    formData.append("sexo", sexo);
+    formData.append("porte", porte);
+    formData.append("peso", peso.toString());
+    formData.append("observacoes", observacoes);
+    formData.append("castracao", castracao ? "true" : "false");
+    if (imagem) {
+        formData.append("imagem", imagem);
+    }
+
+    axios.post("http://localhost/animais", formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
     })
+
     .then((res) => {
       console.log(JSON.stringify(res.data));
       if (res.status === 201) {
@@ -36,11 +45,11 @@ const CadastroAnimais = () => {
     const router = useRouter();
 
     const [nomeAnimal, setNomeAnimal] = useState<string>("");
-    const [idadeAnimal, setIdadeAnimal] = useState<number>(0);
+    const [idadeAnimal, setIdadeAnimal] = useState<number>();
     const [racaAnimal, setRacaAnimal] = useState<string>("");
     const [sexoAnimal, setSexoAnimal] = useState<string>("");
     const [porteAnimal, setPorteAnimal] = useState<string >("");
-    const [pesoAnimal, setPesoAnimal] = useState<number >(0);
+    const [pesoAnimal, setPesoAnimal] = useState<number >();
     const [obsAnimal, setObsAnimal] = useState<string >("");
     const [castrado, setCastrado]= useState<boolean >(false);
     const [imgAnimal, setImgAnimal] = useState<File | undefined>(undefined);
@@ -246,7 +255,7 @@ const CadastroAnimais = () => {
                         <div className={styles['action-wrapper']}>
 
                         <Button className={styles['btn-secondary']} type="button">Salvar respostas</Button>
-                        <Button className={styles['btn-primary']} type="submit"
+                        <Button className={styles['btn-primary']} type="button"
                         onClick={()=>{
                             createAnimal(nomeAnimal, idadeAnimal, racaAnimal, sexoAnimal, porteAnimal, pesoAnimal, obsAnimal, castrado, imgAnimal)
                         }}>Finalizar cadastro</Button>

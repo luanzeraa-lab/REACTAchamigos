@@ -133,7 +133,8 @@ gap: 15px;
 
 .figures {
 display: flex;
-  border: 1px solid #9C27B0;
+align-items: center; 
+ border: 1px solid #9C27B0;
 
 background-color: #E1BEE7;
 
@@ -141,6 +142,7 @@ background-color: #E1BEE7;
   
  figcaption {
   margin-block: 12px;
+  padding: 2rem;
    p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #4B3B2A;
