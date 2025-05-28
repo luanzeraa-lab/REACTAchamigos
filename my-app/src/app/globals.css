@@ -7,6 +7,14 @@
   box-sizing: border-box;
 }
 
+html, body {
+  min-height: 100vh;
+ 
+}
+
+
+
+
 :root {
      --font-family-poppins: 'Poppins', 'sans-serif';
     --font-family-maven: "Maven Pro", sans-serif;
@@ -36,7 +44,7 @@
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 10px;
+gap: 1rem;
 background-color: #f4b183;
 width: 350px;
 height: 40px;
@@ -44,10 +52,6 @@ border-radius: 50px;
 margin-block: 10px;
          
 
-  &:hover {
-
-    border: solid 2px #d94f00;
-  }
 
 
 figure {
